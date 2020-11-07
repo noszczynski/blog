@@ -1,11 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby GraphQL - test`,
+    description: `some description`,
+    author: `author`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `GraphCMS`,
+        fieldName: `gcms`,
+        url:
+          "https://api-eu-central-1.graphcms.com/v2/ckh3l4hebv2ww01xxa8ee74tj/master",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
