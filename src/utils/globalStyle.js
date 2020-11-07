@@ -1,14 +1,8 @@
 import { createGlobalStyle } from "styled-components"
+import color from "./colors"
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Old+Standard+TT:wght@400;700&display=swap');
-
-$light: #ffffff;
-$dark: #3a3a3a;
-$gray: #8a8a8a;
-$grayTransparent: rgba(32,32,32,0.7);
-$mustard: #e1ad01;
-
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -30,7 +24,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $dark;
+    background-color: ${color.dark};
     border: 0;
   }
 }
@@ -54,7 +48,7 @@ body {
   padding: .5rem;
 
   &__item {
-    color: $dark;
+    color: ${color.dark};
     text-decoration: none;
     padding: .5rem 1rem;
     margin-right: 1rem;
@@ -75,7 +69,7 @@ body {
   justify-content: center;
 
   &__item {
-    color: $dark;
+    color: ${color.dark};
     font-weight: 700;
     letter-spacing: 4px;
     width: 10px;
@@ -100,7 +94,7 @@ body {
 .divider {
   width: 60%;
   height: 2px;
-  border-color: $dark;
+  border-color: ${color.dark};
 }
 
 .acticle__wrapper {
@@ -120,13 +114,13 @@ body {
   .article__title {
     font-size: 64px;
     font-family: Montserrat, san-serif;
-    color: $mustard;
+    color: ${color.mustard};
     padding: 0;
     margin: 0;
   }
 
   .article__author, .article__subtitle {
-    color: $dark;
+    color: ${color.dark};
   }
 
   &__cover__wrapper {
@@ -145,7 +139,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: 0;
-      background-color: rgba($light, 0.3);
+      background-color: rgba(${color.light}, 0.3);
     }
   }
 
@@ -178,7 +172,7 @@ body {
   font-size: 16px;
   width: 100%;
   text-align: right;
-  color: $dark;
+  color: ${color.dark};
 
   &::after {
     content: '';
@@ -186,7 +180,7 @@ body {
     bottom: -8px;
     right: 0;
     height: 2px;
-    background-color: $dark;
+    background-color: ${color.dark};
     width: 66%;
     transform-origin: right;
     transform: scaleX(0);
@@ -208,7 +202,7 @@ body {
   width: 190px;
 
   &__button {
-    color: $light;
+    color: ${color.light};
     border: 0;
     background-color: transparent;
     text-transform: uppercase;
@@ -221,7 +215,7 @@ body {
   &__divider {
     height: 8px;
     width: 100px;
-    border-bottom: 2px solid $light;
+    border-bottom: 2px solid ${color.light};
     position: relative;
     z-index: 0;
 
@@ -234,7 +228,7 @@ body {
       right: 0;
       z-index: 1;
       height: 2px;
-      background-color: $mustard;
+      background-color: ${color.mustard};
       transform-origin: left;
       transition: transform .3s ease-in-out;
     }
@@ -247,10 +241,10 @@ body {
 
 .color {
   &-light {
-    color: $light !important;
+    color: ${color.light} !important;
   }
   &-dark {
-    color: $dark !important;
+    color: ${color.dark} !important;
   }
 }
 
@@ -268,13 +262,13 @@ body {
   &-light {
     position: relative;
     &::after {
-      background-color: $light;
+      background-color: ${color.light};
     }
   }
   &-dark {
     position: relative;
     &::after {
-      background-color: $dark;
+      background-color: ${color.dark};
     }
   }
 }
