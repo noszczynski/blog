@@ -1,6 +1,7 @@
 import React from "react"
 
 const Counter = ({ progressArray, activeItem, list }) => {
+  console.log(progressArray)
   return (
     <div className={"counter"}>
       <div className={"counter__item"}>

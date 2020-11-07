@@ -10,14 +10,6 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={{}}>
       <GlobalStyles />
       <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-      </footer>
     </ThemeProvider>
   )
 }

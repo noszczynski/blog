@@ -50,8 +50,10 @@ const ArticleList = ({ calculatedProgress, setActive, list }) => {
 
   return (
     <div className={"acticle__wrapper"} ref={wrapper}>
-      {list.map(article => (
-        <Article key={article.id} article={article} />
+      {list.map((article, index) => (
+        <div key={article.id}>
+          <Article article={article} index={index} />
+        </div>
       ))}
     </div>
   )

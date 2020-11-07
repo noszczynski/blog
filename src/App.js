@@ -15,8 +15,19 @@ const pageQuery = graphql`
     gcms {
       posts {
         id
+        slug
+        title
+        author {
+          id
+          name
+        }
         content {
           html
+        }
+        coverImage {
+          handle
+          id
+          url
         }
       }
     }
@@ -28,10 +39,8 @@ const App = () => {
     gcms: { posts },
   } = useStaticQuery(pageQuery)
 
-  console.log(posts)
-
   const [activeItem, setActiveItem] = useState(1)
-  const [progressArray, setProgressArray] = useState([])
+  const [progressArray, setProgressArray] = useState(null)
 
   const getNewItem = n => {
     switch (typeof n) {
@@ -81,9 +90,10 @@ const App = () => {
             setActive={setActiveItem}
             calculatedProgress={progressArray}
           />
+          {console.log(progressArray)}
           <Counter
             list={posts}
-            progresArray={progressArray}
+            progressArray={progressArray}
             activeItem={activeItem}
           />
         </>
