@@ -45,7 +45,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   z-index: 10;
-  padding: .5rem;
+  padding: 0;
 
   &__item {
     color: ${color.dark};
@@ -110,6 +110,15 @@ body {
   height: 100vh;
   min-width: 100vw;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &__inner {
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    background-color: ${color.mustard};
+  }
 
   .article__title {
     font-size: 64px;
@@ -125,12 +134,11 @@ body {
 
   &__cover__wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    z-index: -1;
-
+    width: 640px;
+    height: 360px;
+    z-index: 0;
+    transition: all .3s ease-in-out;
+    
     &::after {
       content: '';
       position: absolute;
@@ -141,6 +149,17 @@ body {
       z-index: 0;
       background-color: rgba(${color.light}, 0.3);
     }
+    
+   :hover {
+    top: 2rem !important;
+    left: 2rem !important;
+    height: calc(100vh - 4rem);
+    width: calc(100vw - 4rem);
+   } 
+   
+   :hover + .article__item__wrapper {
+    opacity: 0.8;
+   }
   }
 
   &__cover {
@@ -160,6 +179,10 @@ body {
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
+    background-color: ${color.light};
+    padding: 1rem;
+    border-radius: 0.2rem;
+    transition: opacity .3s ease-in-out;
   }
 }
 
@@ -199,10 +222,10 @@ body {
   left: 2rem;
   align-items: center;
   justify-content: space-between;
-  width: 190px;
+  width: 220px;
 
   &__button {
-    color: ${color.light};
+    color: ${color.dark};
     border: 0;
     background-color: transparent;
     text-transform: uppercase;
@@ -228,7 +251,7 @@ body {
       right: 0;
       z-index: 1;
       height: 2px;
-      background-color: ${color.mustard};
+      background-color: ${color.dark};
       transform-origin: left;
       transition: transform .3s ease-in-out;
     }

@@ -54,7 +54,11 @@ const ArticleList = ({ calculatedProgress, setActive, list }) => {
     <div className={"acticle__wrapper"} ref={wrapper}>
       {list.map((article, index) => (
         <div key={article.id}>
-          <Article article={article} index={index} />
+          <Article
+            position={calculatedProgress[index].position}
+            article={article}
+            index={index}
+          />
         </div>
       ))}
     </div>

@@ -1,9 +1,5 @@
 const MENU_ITEMS = [
   {
-    label: `wv: ${window.innerWidth}`,
-    link: "/",
-  },
-  {
     label: "stories",
     link: "/",
   },

@@ -5,7 +5,7 @@ import Counter from "./components/Counter"
 import ArticleList from "./components/ArticleList"
 import NavigationButtons from "./components/NavigationButtons"
 
-import { round } from "./utils/utils"
+import { getRandom, round } from "./utils/utils"
 
 import { graphql, useStaticQuery } from "gatsby"
 import { cloneDeep } from "lodash"
@@ -77,7 +77,17 @@ const App = () => {
 
     if (arr && length) {
       const progress = arr.reduce((acc, post, index) => {
-        acc.push({ label: index + 1, value: round(index / (length - 1)) })
+        const top = getRandom(5, 40)
+        const left = getRandom(2, 20)
+
+        acc.push({
+          label: index + 1,
+          value: round(index / (length - 1)),
+          position: {
+            top,
+            left,
+          },
+        })
         return acc
       }, [])
 
