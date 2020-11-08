@@ -15,18 +15,23 @@ const pageQuery = graphql`
     gcms {
       posts {
         id
+        date
         slug
+        stage
+        tags
         title
         author {
-          id
           name
+          picture {
+            url
+          }
         }
+        updatedAt
         content {
           html
+          text
         }
         coverImage {
-          handle
-          id
           url
         }
       }
@@ -61,7 +66,9 @@ const App = () => {
   }
 
   const setItem = n => {
-    setActiveItem(getNewItem(n))
+    const item = getNewItem(n)
+    console.log(item)
+    setActiveItem(item)
   }
 
   const init = () => {
@@ -101,7 +108,7 @@ const App = () => {
       <NavigationButtons
         setItem={setItem}
         activeItem={activeItem}
-        itemsLength={6}
+        itemsLength={posts.length}
       />
     </main>
   )

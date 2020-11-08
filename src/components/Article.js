@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const Article = ({ article, index }) => {
   const {
@@ -21,9 +22,9 @@ const Article = ({ article, index }) => {
         <h3 className={"article__subtitle subtitle"}>Story 0{index}</h3>
         <h2 className={"article__title"}>{title}</h2>
         <h5 className={"article__author"}>{authorName}</h5>
-        <a className={"article__link"} href={`/${slug}`}>
+        <Link className={"article__link"} to={`/${slug}`}>
           read more
-        </a>
+        </Link>
       </section>
     </article>
   )

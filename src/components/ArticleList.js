@@ -43,8 +43,10 @@ const ArticleList = ({ calculatedProgress, setActive, list }) => {
     setTimeline(getTimeline())
 
     return () => {
-      timeline.clear()
-      setTimeline(timeline)
+      if (timeline) {
+        timeline.clear()
+        setTimeline(null)
+      }
     }
   }, [])
 
